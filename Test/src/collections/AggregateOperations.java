@@ -1,13 +1,12 @@
-package Test;
+package collections;
 
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import Test.*;
 public class AggregateOperations {
 	
 	public static void filtrar(Collection<Poligono>c){
@@ -41,6 +40,22 @@ public class AggregateOperations {
 	//        if (!cond(it.next()))
 	//            it.remove();
 	//}
+	public static void FindDups(ArrayList<String> n){
+		 Set<String> distinctWords =n.stream()
+					.collect(Collectors.toSet()); 
+			        System.out.println(distinctWords.size()+ 
+			                           " distinct words: " + 
+			                           distinctWords);
+	}
+	public static void FindDups2(ArrayList<String> n){
+		
+		        Set<String> s = new HashSet<String>();
+		        for (String a : n)
+		               s.add(a);
+		               System.out.println(s.size() + " distinct words: " + s);
+		    
+	}
+	
 	 public static void main(String[] args) {
 		 
 		 //Creo una colección de polígonos con un ArrayList
@@ -87,13 +102,36 @@ public class AggregateOperations {
 	nombres.add("Maria");
 	nombres.add("Juana");
 	nombres.add("Pepe");
-	Collection<Persona> gente=personas;
-	System.out.println(gente.size());
-	gente.stream()
-	.collect(Collectors.toSet());
-	System.out.println(gente.size());
-
+ //Eliminar duplicados SET
+	FindDups(nombres);
+	//Eliminar duplicados HashSet
+	FindDups2(nombres); 
+	ArrayList<String> nombres2=new ArrayList<String>();
+	nombres2.add("Manuel");
+	nombres2.add("Lorenzo");
+	nombres2.add("Maria");
+	nombres2.add("Sofia");
+	nombres2.add("Elena");
 	
+	//Union de conjuntos
+	Set<String> union = new HashSet<String>(nombres);
+	union.addAll(nombres2);
+	System.out.print("Union: ");
+		System.out.println(union);
+		
+	//Interseccion de conjuntos
+		Set<String> intersection = new HashSet<String>(nombres);
+		intersection.retainAll(nombres2);
+		System.out.print("Interseccion: ");
+		System.out.println(intersection);
+		
+	//Diferencia de conjuntos
+		Set<String> difference = new HashSet<String>(nombres);
+		difference.removeAll(nombres2);
+		System.out.print("Diferencia: ");
+		System.out.println(difference);
 	 }
+	 
+
 	
 }

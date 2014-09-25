@@ -1,4 +1,4 @@
-package Test;
+package collections;
 
 public class Persona {
 	private String nombre;

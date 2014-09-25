@@ -1,4 +1,4 @@
-package Test;
+package collections;
 
 public class Poligono {
 
@@ -23,10 +23,6 @@ public class Poligono {
 	public float getCentro ()
 	{
 	return centro;
-	}
-	public float getArea ()
-	{
-	return area;
 	}
 	public String getColor ()
 	{
