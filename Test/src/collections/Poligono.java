@@ -2,7 +2,7 @@ package collections;
 
 public class Poligono {
 
-	// Declaración de atributos
+	// DeclaraciÃ³n de atributos
 	private int numlados;
 	private float centro;
 	private float area;
@@ -15,7 +15,7 @@ public class Poligono {
 	this.area=area;
 	this.color=color;
 	}
-	// Definición de métodos
+	// DefiniciÃ³n de mÃ©todos
 	public int getNumlados ()
 	{
 	return numlados;
@@ -28,8 +28,8 @@ public class Poligono {
 	{
 	return color;
 	}
-	public float getArea (Poligono p)
+	public float getArea ()
 	{
-	return p.area;
+	return area;
 	}
 }
