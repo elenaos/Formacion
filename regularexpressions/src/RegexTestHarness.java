@@ -38,13 +38,14 @@ import java.util.regex.Matcher;
 public class RegexTestHarness {
 
     public static void main(String[] args){
-     
+    	String REGEX = "(\\d\\d)\\1";
+        String INPUT ="1212";
             //Escrbir patron
             Pattern pattern = 
-            Pattern.compile("[abc]");
+            Pattern.compile(REGEX);
             //escribir string en el que buscar
             Matcher matcher = 
-            pattern.matcher("catsasdcats");
+            pattern.matcher(INPUT);
 
             boolean found = false;
             while (matcher.find() ) {
