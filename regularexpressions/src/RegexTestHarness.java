@@ -30,7 +30,7 @@ package regularexpressions;
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */ 
-
+//Codigo ligeramente modificado
 import java.io.Console;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -38,32 +38,29 @@ import java.util.regex.Matcher;
 public class RegexTestHarness {
 
     public static void main(String[] args){
-        Console console = System.console();
-        if (console == null) {
-            System.err.println("No console.");
-            System.exit(1);
-        }
-        while (true) {
-
+     
+            //Escrbir patron
             Pattern pattern = 
-            Pattern.compile(console.readLine("%nEnter your regex: "));
-
+            Pattern.compile("[abc]");
+            //escribir string en el que buscar
             Matcher matcher = 
-            pattern.matcher(console.readLine("Enter input string to search: "));
+            pattern.matcher("catsasdcats");
 
             boolean found = false;
-            while (matcher.find()) {
-                console.format("I found the text" +
+            while (matcher.find() ) {
+          
+                System.out.format("I found the text" +
                     " \"%s\" starting at " +
                     "index %d and ending at index %d.%n",
                     matcher.group(),
                     matcher.start(),
                     matcher.end());
                 found = true;
+               
             }
             if(!found){
-                console.format("No match found.%n");
+                System.out.format("No match found.%n");
             }
-        }
+       
     }
 }
