@@ -7,6 +7,7 @@ public class StringMatcher {
 	  // returns true if the string matches exactly "true"
 	  public boolean isTrue(String s){
 	    return s.matches("true");
+	   
 	  }
 	  // returns true if the string matches exactly "true" or "True"
 	  public boolean isTrueVersion2(String s){
@@ -63,6 +64,31 @@ public class StringMatcher {
 	          
 	        }
 		  return aux;
+	  }
+	  public  boolean regexTestHarness(String regex, String input){
+		  //Escrbir patron
+          Pattern pattern = 
+          Pattern.compile(regex);
+          //escribir string en el que buscar
+          Matcher matcher = 
+          pattern.matcher(input);
+          boolean found = false;
+          while (matcher.find() ) {
+        
+           /*   System.out.format("I found the text" +
+                  " \"%s\" starting at " +
+                  "index %d and ending at index %d.%n",
+                  matcher.group(),
+                  matcher.start(),
+                  matcher.end());
+             */ found = true;
+             
+          }
+          if(!found){
+              System.out.format("No match found.%n");
+          }
+          
+		  return found;
 	  }
 
 	} 
